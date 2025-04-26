@@ -1,0 +1,128 @@
+.user-profile {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 40px;
+}
+.user-profile h2 {
+  text-align: center;
+  color: #048ee1;
+  margin-bottom: 28px;
+}
+.profile-avatar-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.profile-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #e3f2fd;
+  box-shadow: 0 2px 12px rgba(4,142,225,0.09);
+  background: #e3f2fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.profile-info {
+  font-size: 1rem;
+  line-height: 2.2;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile-info > div, .profile-role-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.profile-info label {
+  width: 130px;
+  color: #222;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: right;
+}
+.profile-info input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1.5px solid #d1e5f7;
+  border-radius: 5px;
+  font-size: 1em;
+  outline: none;
+  transition: border 0.15s;
+  margin-left: 0;
+}
+.profile-info input:focus {
+  border: 1.5px solid #048ee1;
+}
+.profile-role-row label {
+  width: 130px;
+  text-align: right;
+}
+.profile-role {
+  font-weight: 600;
+  color: #048ee1;
+}
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 18px;
+}
+.profile-btn {
+  background: #048ee1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(4,142,225,0.07);
+  transition: background 0.15s, box-shadow 0.13s;
+}
+.profile-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.profile-btn + .profile-btn {
+  background: #e0e0e0;
+  color: #222;
+}
+.profile-message {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #fff;
+  background: #23c16b;
+  border-radius: 5px;
+  padding: 8px 0;
+  font-size: 1.05em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(36, 174, 104, 0.07);
+}
+@media (max-width: 600px) {
+  .user-profile {
+    padding: 20px 8px;
+    max-width: 97vw;
+  }
+  .profile-info label, .profile-role-row label {
+    width: 90px;
+    font-size: 0.98em;
+  }
+  .profile-avatar {
+    width: 70px;
+    height: 70px;
+  }
+}

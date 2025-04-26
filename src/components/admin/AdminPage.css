@@ -1,0 +1,129 @@
+.admin-page {
+  max-width: 860px;
+  margin: 30px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(4,142,225,0.10);
+  padding: 32px 30px 30px 30px;
+}
+.admin-page h2 {
+  color: #048ee1;
+  font-weight: 800;
+  margin-bottom: 22px;
+  text-align: center;
+}
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) 120px;
+  gap: 14px;
+  margin-bottom: 22px;
+  align-items: center;
+  justify-items: stretch;
+}
+.admin-form input {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1.5px solid #e3e8ee;
+  font-size: 1em;
+  min-width: 140px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.admin-form button {
+  padding: 7px 18px;
+  border-radius: 8px;
+  background: #048ee1;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background 0.13s;
+  width: 100%;
+  min-width: 100px;
+}
+.admin-form button:hover {
+  background: #005fa3;
+}
+@media (max-width: 900px) {
+  .admin-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  .admin-form button {
+    grid-column: span 2;
+  }
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+}
+.admin-table th, .admin-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e3e8ee;
+  text-align: left;
+}
+.admin-table th {
+  background: #f5faff;
+  color: #048ee1;
+  font-weight: 700;
+}
+.admin-table td {
+  vertical-align: top;
+  font-size: 1em;
+  color: #22334d;
+  background: #fff;
+}
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+.admin-table .admin-action-btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.98em;
+  margin-right: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.13s;
+}
+.admin-table .btn-edit {
+  background: #ffe57f;
+  color: #8a6d00;
+}
+.admin-table .btn-edit:hover {
+  background: #ffd600;
+}
+.admin-table .btn-delete {
+  background: #ffb3b3;
+  color: #a10000;
+}
+.admin-table .btn-delete:hover {
+  background: #ff5050;
+  color: #fff;
+}
+.admin-table img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e3e8ee;
+}
+.form-error {
+  color: #fff;
+  background: #e74c3c;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.form-success {
+  color: #fff;
+  background: #27ae60;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}

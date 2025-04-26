@@ -1,0 +1,25 @@
+.admin-stats-page-root {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(25, 118, 210, 0.09);
+  padding: 40px 32px 32px 32px;
+}
+.admin-stats-page-title {
+  font-size: 2rem;
+  color: #1976d2;
+  font-weight: 700;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+@media (max-width: 700px) {
+  .admin-stats-page-root {
+    padding: 18px 4vw;
+  }
+  .admin-stats-page-title {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+  }
+}

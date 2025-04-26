@@ -1,0 +1,12 @@
+/* CartList Styles */
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.cart-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1.07em;
+  padding: 32px 0;
+}

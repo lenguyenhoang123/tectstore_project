@@ -1,0 +1,177 @@
+/* LoginForm Modern Styles */
+.login-form-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 70%, #e3f0ff 100%);
+  padding: 0;
+}
+.login-form {
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 12px 48px rgba(4,142,225,0.16);
+  padding: 56px 44px 40px 44px;
+  min-width: 370px;
+  max-width: 98vw;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  position: relative;
+  border: 1.5px solid #e3e7ed;
+  animation: popIn 0.7s cubic-bezier(.4,2,.6,1) 1;
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(40px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+.login-form h2 {
+  color: #048ee1;
+  font-size: 1.8em;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-form label {
+  font-weight: 700;
+  color: #1976d2;
+  letter-spacing: 0.1px;
+  margin-bottom: 2px;
+}
+.login-form input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.8px solid #e3e7ed;
+  font-size: 1.08em;
+  background: #f8fafc;
+  transition: border 0.18s, box-shadow 0.18s;
+  font-family: inherit;
+}
+.login-form input:focus {
+  border: 1.8px solid #048ee1;
+  outline: none;
+  box-shadow: 0 3px 14px rgba(4,142,225,0.13);
+}
+.login-button {
+  background: linear-gradient(90deg, #048ee1 70%, #005fa3 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 0;
+  font-size: 1.16em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.13s, box-shadow 0.13s;
+  box-shadow: 0 2px 12px rgba(4,142,225,0.09);
+  letter-spacing: 0.2px;
+}
+.login-button:disabled {
+  background: #a3c8e6;
+  cursor: not-allowed;
+}
+.login-button:hover:not(:disabled) {
+  background: #005fa3;
+  transform: scale(1.035);
+  box-shadow: 0 6px 24px rgba(4,142,225,0.13);
+}
+.login-error {
+  color: #e53935;
+  background: #ffeaea;
+  border-radius: 11px;
+  padding: 10px 16px;
+  margin-bottom: 2px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  font-size: 1.05em;
+  border: 1.5px solid #ffd6d6;
+}
+.register-link {
+  color: #048ee1;
+  font-weight: 700;
+  text-decoration: underline;
+  letter-spacing: 0.1px;
+  transition: color 0.14s;
+}
+.register-link:hover {
+  color: #005fa3;
+}
+@media (max-width: 600px) {
+  .login-form {
+    min-width: 96vw;
+    padding: 22px 2vw 22px 2vw;
+    border-radius: 16px;
+  }
+}
+
+/* ========== PROFILE PAGE (Doanh nghiệp lớn) ========== */
+.profile-container {
+  max-width: 480px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(25, 118, 210, 0.12), 0 1.5px 6px rgba(0,0,0,0.06);
+  padding: 40px 32px;
+  text-align: left;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+.profile-title {
+  text-align: center;
+  color: #1976d2;
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f4f8;
+}
+.profile-label {
+  color: #607d8b;
+  font-weight: 600;
+  font-size: 1.07rem;
+  min-width: 120px;
+}
+.profile-value {
+  color: #263238;
+  font-size: 1.09rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+.profile-empty {
+  color: #b71c1c;
+  text-align: center;
+  font-size: 1.08rem;
+  margin-top: 16px;
+}
+@media (max-width: 600px) {
+  .profile-container {
+    max-width: 98vw;
+    padding: 18px 4vw;
+  }
+  .profile-title {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+  .profile-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px 0;
+  }
+}

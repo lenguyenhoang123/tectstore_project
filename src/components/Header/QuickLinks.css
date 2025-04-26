@@ -1,0 +1,19 @@
+.quick-links-root {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  margin-left: 2vw;
+}
+.quick-link {
+  color: #048ee1;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.05em;
+  padding: 3px 9px;
+  border-radius: 7px;
+  transition: background 0.13s, color 0.13s;
+}
+.quick-link:hover {
+  background: #e3f2fd;
+  color: #005fa3;
+}
