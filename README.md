@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# TectStore Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Tổng quan chức năng
 
-## Available Scripts
+- **Trang chủ:** Hiển thị sản phẩm nổi bật, các tính năng nổi bật của cửa hàng.
+- **Tìm kiếm & Danh mục:** Lọc sản phẩm theo loại, tìm kiếm nhanh.
+- **Trang sản phẩm:** Xem chi tiết, thêm vào giỏ hàng.
+- **Giỏ hàng:** Quản lý sản phẩm đã chọn, cập nhật số lượng, xóa sản phẩm.
+- **Thanh toán:** Nhập thông tin, xác nhận đơn hàng.
+- **Tài khoản người dùng:** Đăng ký, đăng nhập, chỉnh sửa thông tin cá nhân, avatar.
+- **Quản trị:** Thống kê, quản lý sản phẩm, quản lý khách hàng, quản lý đơn hàng.
+- **Thông báo, Modal xác nhận, Loading:** Giao diện đồng bộ, hiện đại.
 
-In the project directory, you can run:
+## 2. Ứng dụng xây dựng bằng công nghệ gì?
 
-### `npm start`
+| Chức năng                | Công nghệ sử dụng           |
+|--------------------------|-----------------------------|
+| Giao diện người dùng     | ReactJS, React Router       |
+| Quản lý trạng thái       | React useState/useEffect    |
+| Giao tiếp backend        | Fetch API, RESTful API      |
+| Backend                  | Node.js, Express            |
+| Quản lý dữ liệu          | MongoDB, Mongoose           |
+| Xác thực, phân quyền     | JWT (JSON Web Token)        |
+| Giao diện động, responsive| CSS3, Flexbox, Media Query  |
+| Icon, UI hiện đại        | react-icons                 |
+| Thông báo, Modal         | Component tự xây dựng       |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 3. Tại sao nên sử dụng app này?
+- Quản lý bán hàng, kho, khách hàng, đơn hàng hiệu quả, trực quan.
+- Giao diện hiện đại, dễ dùng trên mọi thiết bị.
+- Dễ dàng mở rộng, tuỳ biến cho doanh nghiệp vừa và nhỏ.
+- Bảo mật tốt, phân quyền rõ ràng.
+- Dễ dàng tích hợp thêm các dịch vụ như thanh toán, email, báo cáo.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 4. Hướng dẫn cài đặt và chạy dự án
 
-### `npm test`
+### Yêu cầu:
+- Node.js >= 16
+- MongoDB (local hoặc cloud)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Cài đặt:
+```bash
+# Clone dự án về máy
+https://github.com/lenguyenhoang123/tectstore_project.git
+cd tectstore_project
 
-### `npm run build`
+# Cài đặt dependencies
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Cấu hình biến môi trường (nếu có)
+# Tạo file .env và điền các biến cần thiết (ví dụ: MONGODB_URI, JWT_SECRET, ...)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Chạy backend (Node.js)
+node server.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Chạy frontend (React)
+npm start
+```
 
-### `npm run eject`
+- Truy cập frontend tại: http://localhost:3000
+- Backend mặc định chạy tại: http://localhost:5000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Một số lệnh hữu ích
+- `npm run build`: Build production
+- `npm test`: Chạy test (nếu có)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+**Mọi thắc mắc/góp ý, vui lòng liên hệ chủ dự án qua GitHub hoặc email trong repo.**
