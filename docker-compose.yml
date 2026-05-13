@@ -1,0 +1,44 @@
+services:
+  # MongoDB Database
+  mongodb:
+    image: mongo:latest
+    container_name: techstore-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: techstore
+
+  # Backend API
+  backend:
+    build: .
+    container_name: techstore-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    environment:
+      NODE_ENV: production
+      MONGODB_URI: mongodb://mongodb:27017/techstore
+    volumes:
+      - ./logs:/app/logs
+
+  # Frontend (React App)
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: techstore-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_API_URL: http://localhost:5000
+
+volumes:
+  mongodb_data:

@@ -15,7 +15,8 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Kết nối MongoDB (dùng tên database theo tên dự án: techstore)
-mongoose.connect('mongodb://localhost:27017/techstore', {
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/techstore';
+mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('MongoDB connected!'));
