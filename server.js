@@ -15,10 +15,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Kết nối MongoDB (dùng tên database theo tên dự án: techstore)
-const mongoUri = process.env.MONGODB_URI || 'mongodb+srv://tectstore:tectstore@cluster0.jnowrmt.mongodb.net/techstore?retryWrites=true&w=majority&appName=Cluster0';
+const mongoUri = process.env.MONGODB_URI || 
+  'mongodb+srv://tectstore:tectstore123@cluster0.jnowrmt.mongodb.net/tectstore?retryWrites=true&w=majority&appName=TectStore';
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true
 }).then(() => console.log('MongoDB connected!'));
 
 // Định nghĩa model sản phẩm
