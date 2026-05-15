@@ -15,7 +15,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 // Kết nối MongoDB (dùng tên database theo tên dự án: techstore)
-const mongoUri = 'mongodb+srv://tectstore:<tectstore>@cluster0.jnowrmt.mongodb.net/?appName=Cluster0';
+const mongoUri = process.env.MONGODB_URI || 'MONGO_URI=mongodb+srv://tectstore:tectstore@cluster0.jnowrmt.mongodb.net/techstore?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
