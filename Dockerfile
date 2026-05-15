@@ -8,7 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Cài đặt dependencies
-RUN npm ci --only=production
+# RUN npm ci --only=production
+RUN npm ci
 
 # Copy source code
 COPY . .
