@@ -8,7 +8,7 @@ const JWT_SECRET = 'your_secret_key'; // Đặt bí mật mạnh hơn ở môi t
 
 const app = express();
 const corsOptions = {
-  origin: 'http://localhost:3000', // Cho phép gọi API từ frontend tại port 3000
+  origin: ['http://localhost:3000', 'https://tectstoreproject.vercel.app'], // Cho phép gọi API từ frontend
   optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
