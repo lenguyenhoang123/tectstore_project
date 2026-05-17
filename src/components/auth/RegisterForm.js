@@ -1,6 +1,7 @@
 // Component RegisterForm: Form đăng ký tài khoản mới
 import React, { useState } from 'react';
 import './RegisterForm.css';
+import API_URL from '../../config/api';
 
 function RegisterForm({ onRegister }) {
   const [form, setForm] = useState({ username: '', password: '', email: '', profile: { fullname: '', phone: '' } });
