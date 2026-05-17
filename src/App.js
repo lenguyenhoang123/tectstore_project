@@ -13,10 +13,11 @@ import UserProfile from './components/user/UserProfile';
 import AdminStatsPage from './pages/AdminStatsPage';
 import AdminCustomersPage from './pages/AdminCustomersPage';
 import CheckoutPage from './components/checkout/CheckoutPage';
+import API_URL from './config/api';
 import './App.css';
 
 function App() {
-  // Khởi tạo user từ localStorage
+  // Khởi tạo user từ localStorage  
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [notify, setNotify] = useState(null);
@@ -26,7 +27,7 @@ function App() {
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
     if (userId && token) {
-      const res = await fetch(`http://localhost:5000/api/users/${userId}`, {
+      const res = await fetch(`${API_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -46,7 +47,7 @@ function App() {
     try {
       const userId = user?._id || localStorage.getItem('userId');
       if (!userId) return;
-      const res = await fetch(`http://localhost:5000/api/cart?userId=${userId}`);
+      const res = await fetch(`${API_URL}/api/cart?userId=${userId}`);
       const data = await res.json();
       setCartItems(data.items || []);
     } catch (e) {
@@ -64,7 +65,7 @@ function App() {
   const addToCart = async (product) => {
     try {
       const userId = user?._id || localStorage.getItem('userId');
-      const res = await fetch('http://localhost:5000/api/cart/add', {
+      const res = await fetch(`${API_URL}/api/cart/add`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -91,7 +92,7 @@ function App() {
       const userId = user?._id || localStorage.getItem('userId');
       const item = cartItems.find(i => i._id === productId);
       if (!item) return;
-      const res = await fetch('http://localhost:5000/api/cart/update', {
+      const res = await fetch(`${API_URL}/api/cart/update`,{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, productId, quantity: item.quantity + 1 })
@@ -113,7 +114,7 @@ function App() {
       const userId = user?._id || localStorage.getItem('userId');
       const item = cartItems.find(i => i._id === productId);
       if (!item) return;
-      const res = await fetch('http://localhost:5000/api/cart/update', {
+      const res = await fetch(`${API_URL}/api/cart/update`,{
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, productId, quantity: item.quantity - 1 })
@@ -132,7 +133,7 @@ function App() {
   const removeFromCart = async (productId) => {
     try {
       const userId = user?._id || localStorage.getItem('userId');
-      const res = await fetch('http://localhost:5000/api/cart/remove', {
+      const res = await fetch(`${API_URL}/api/cart/remove`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userId, productId })

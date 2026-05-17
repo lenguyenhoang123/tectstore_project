@@ -7,7 +7,7 @@ function ProfilePage() {
 
   useEffect(() => {
     if (userId && token) {
-      fetch(`http://localhost:5000/api/users/${userId}`, {
+      fetch(`${API_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())

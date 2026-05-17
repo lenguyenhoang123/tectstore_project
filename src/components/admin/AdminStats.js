@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminStats.css';
+import API_URL from '../../config/api';
 
 export default function AdminStats() {
   const [stats, setStats] = useState(null);
@@ -7,7 +8,7 @@ export default function AdminStats() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/stats')
+    fetch(`${API_URL}/api/admin/stats`)
       .then(res => res.json())
       .then(data => {
         setStats(data);

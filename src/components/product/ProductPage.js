@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import './ProductPage.css';
+import API_URL from '../../config/api';
 
-const API_URL = 'http://localhost:5000/api/products';
+const PRODUCTS_API_URL = `${API_URL}/api/products`;
 
 const sidebarCategories = [
   'Điện thoại',
@@ -24,7 +25,7 @@ function ProductPage({ onAddToCart }) {
   const [brand, setBrand] = useState('Tất cả');
 
   useEffect(() => {
-    fetch(API_URL)
+    fetch(PRODUCTS_API_URL)
       .then(res => res.json())
       .then(data => {
         setProducts(data);

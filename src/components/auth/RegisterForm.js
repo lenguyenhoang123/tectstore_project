@@ -9,7 +9,7 @@ function RegisterForm({ onRegister }) {
   const [success, setSuccess] = useState(false);
 
   // Đảm bảo fetch API đăng ký gọi đúng địa chỉ backend
-  const API_URL = 'http://localhost:5000/api/register';
+  const REGISTER_API_URL = `${API_URL}/api/register`;
 
   const handleChange = e => {
     if (e.target.name === 'fullname' || e.target.name === 'phone') {
@@ -25,7 +25,7 @@ function RegisterForm({ onRegister }) {
     setError('');
     setSuccess(false);
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch(REGISTER_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './UserProfile.css';
+import API_URL from '../../config/api';
 
 export default function UserProfile() {
   const [user, setUser] = useState(null);
@@ -12,7 +13,7 @@ export default function UserProfile() {
     const userId = localStorage.getItem('userId');
     const token = localStorage.getItem('token');
     if (userId && token) {
-      fetch(`http://localhost:5000/api/users/${userId}`, {
+      fetch(`${API_URL}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       })
         .then(res => res.json())
@@ -57,7 +58,7 @@ export default function UserProfile() {
     }
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${user._id}`, {
+      const res = await fetch(`${API_URL}/api/users/${user._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -69,7 +70,7 @@ export default function UserProfile() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Lỗi cập nhật!');
       // Lấy lại user mới nhất từ server
-      const updatedRes = await fetch(`http://localhost:5000/api/users/${user._id}`);
+      const updatedRes = await fetch(`${API_URL}/api/users/${user._id}`);
       const updatedUser = await updatedRes.json();
       setUser(updatedUser);
       setEditMode(false);

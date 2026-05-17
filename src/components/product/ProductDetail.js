@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
+import API_URL from '../../config/api';
 
 // Hàm tính điểm trung bình đánh giá
 function getAverageRating(reviews) {
@@ -28,7 +29,7 @@ function ProductDetail({ onAddToCart }) {
   useEffect(() => {
     if (!product) {
       setLoading(true);
-      fetch(`http://localhost:5000/api/products/${id}`)
+      fetch(`${API_URL}/api/products/${id}`)
         .then(res => res.json())
         .then(data => {
           setProduct(data);
@@ -46,7 +47,7 @@ function ProductDetail({ onAddToCart }) {
 
   useEffect(() => {
     if (product?.category) {
-      fetch(`http://localhost:5000/api/products?category=${encodeURIComponent(product.category)}`)
+      fetch(`${API_URL}/api/products?category=${encodeURIComponent(product.category)}`)
         .then(res => res.json())
         .then(data => setRelatedProducts(data.filter(p => p._id !== product._id))) // Loại trừ chính sản phẩm đang xem
         .catch(() => setRelatedProducts([]));

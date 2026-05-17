@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminCustomersPage.css';
+import API_URL from '../config/api';
 
 export default function AdminCustomersPage() {
   const [customers, setCustomers] = useState([]);
@@ -7,7 +8,7 @@ export default function AdminCustomersPage() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/customers')
+    fetch(`${API_URL}/api/admin/customers`)
       .then(res => res.json())
       .then(data => {
         setCustomers(data);

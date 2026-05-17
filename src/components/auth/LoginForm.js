@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 import GoogleLoginButton from './GoogleLoginButton';
+import API_URL from '../../config/api';
 
 function LoginForm({ onLogin }) {
   const [form, setForm] = useState({ username: '', password: '' });
@@ -19,7 +20,7 @@ function LoginForm({ onLogin }) {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

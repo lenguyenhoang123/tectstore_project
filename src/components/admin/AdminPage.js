@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './AdminPage.css';
 // import AdminStats from './AdminStats';
+import API_URL from '../../config/api';
 
-const API_URL = 'http://localhost:5000/api/products';
+const PRODUCTS_API_URL = `${API_URL}/api/products`;
 
 const initialForm = {
   name: '',
@@ -25,7 +26,7 @@ export default function AdminPage() {
 
   // Fetch product list
   useEffect(() => {
-    fetch(API_URL)
+    fetch(PRODUCTS_API_URL)
       .then(res => res.json())
       .then(setProducts)
       .catch(() => setError('Không thể tải danh sách sản phẩm.'));
@@ -58,13 +59,13 @@ export default function AdminPage() {
     try {
       let res;
       if (editingId) {
-        res = await fetch(`${API_URL}/${editingId}`, {
+        res = await fetch(`${PRODUCTS_API_URL}/${editingId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(submitData)
         });
       } else {
-        res = await fetch(API_URL, {
+        res = await fetch(PRODUCTS_API_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(submitData)
@@ -74,7 +75,7 @@ export default function AdminPage() {
       setSuccess(editingId ? 'Cập nhật thành công!' : 'Thêm sản phẩm thành công!');
       setForm(initialForm);
       setEditingId(null);
-      fetch(API_URL).then(res => res.json()).then(setProducts);
+      fetch(PRODUCTS_API_URL).then(res => res.json()).then(setProducts);
     } catch {
       setError('Lỗi khi lưu sản phẩm!');
     }
@@ -101,7 +102,7 @@ export default function AdminPage() {
   const handleDelete = async id => {
     if (!window.confirm('Bạn có chắc chắn muốn xóa sản phẩm này?')) return;
     try {
-      const res = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+      const res = await fetch(`${PRODUCTS_API_URL}/${id}`, { method: 'DELETE' });
       if (!res.ok) throw new Error();
       setProducts(products.filter(p => p._id !== id));
       setSuccess('Đã xóa sản phẩm!');
